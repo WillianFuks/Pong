@@ -1,0 +1,7 @@
+gym[atari]
+pyvirtualdisplay
+ez_setup
+tensorflow
+numba
+matplotlib
+atari-py
