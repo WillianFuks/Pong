@@ -9,3 +9,5 @@ Here's an example of the AI playing after training for roughly 15k episodes; gre
 <p align="center">
   <img src="./pong.gif"
 </p>
+
+The trained model weights are located in the file `model.pckl`.
