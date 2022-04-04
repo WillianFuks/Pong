@@ -19,14 +19,17 @@ env = gym.make('ALE/Pong-v5')
 obs = preprocess_img(tf.constant(env.reset(), tf.int32))
 previous_obs = tf.zeros_like(obs)
 mean_obs = obs
+i = 0
 
 while not done:
-    img = env.render(mode='rgb_array')
-    img = Image.fromarray(img)
-    img = img.resize((300, 410))
-    images.append(img)
+    i += 1
+    if not i % 2:
+        img = env.render(mode='rgb_array')
+        img = Image.fromarray(img)
+        img = img.resize((300, 410))
+        images.append(img)
 
-    z_2, _ = compute_action(w1, w2, b1, b2, mean_obs)
+    z_2 = tf.transpose(w2 @ (tf.nn.relu(w1 @ mean_obs + b1)) + b2)
     action = tf.argmax(z_2, axis=1)
 
     obs, _, done, _ = env.step(action[0].numpy() + 1)

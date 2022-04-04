@@ -7,5 +7,5 @@ The approach here is a bit different, please refer to the [spinningup docs](http
 Here's an example of the trained AI after training for roughly 15k episodes:
 
 <p align="center">
-  <img src="./pong.gif" style
+  <img src="./pong.gif"
 </p>
