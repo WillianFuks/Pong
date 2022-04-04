@@ -129,3 +129,4 @@ dmypy.json
 .pyre/
 
 *pckl
+!model.pckl
